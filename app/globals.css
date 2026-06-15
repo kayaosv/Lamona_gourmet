@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-heading: var(--font-playfair), 'Playfair Display', serif;
+  --font-sans: var(--font-inter), 'Inter Fallback', system-ui, sans-serif;
+  --font-serif: var(--font-playfair), 'Playfair Display', serif;
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-rose: var(--rose);
+  --color-whatsapp: var(--whatsapp);
+  --color-cream: var(--cream);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  color-scheme: light;
+  --cream: #fff4f8;
+  --background: #fff4f8;
+  --foreground: #2a1520;
+  --card: #ffffff;
+  --card-foreground: #2a1520;
+  --popover: #ffffff;
+  --popover-foreground: #2a1520;
+  --primary: #c8789a;
+  --primary-foreground: #ffffff;
+  --secondary: #fce8f2;
+  --secondary-foreground: #2a1520;
+  --muted: #fce8f2;
+  --muted-foreground: #9a6878;
+  --accent: #cdb4db;
+  --accent-foreground: #2a1520;
+  --destructive: #c0473b;
+  --border: #f0d4e4;
+  --input: #f0d4e4;
+  --ring: #c8789a;
+  --gold: #c8789a;
+  --rose: #ffafcc;
+  --whatsapp: #25d366;
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: auto;
+  }
+}
+
+/* Hide scrollbar utility for horizontal strips */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
